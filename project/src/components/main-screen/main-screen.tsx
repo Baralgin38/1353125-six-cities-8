@@ -293,3 +293,5 @@ function mainScreen (): JSX.Element {
     </body>
   );
 }
+
+export default mainScreen;
