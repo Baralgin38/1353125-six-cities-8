@@ -1,6 +1,11 @@
-import placeCard from '../place-card/place-card';
+import PlaceCard from '../place-card/place-card';
 
-function MainScreen (): JSX.Element {
+type MainScreenProps = {
+  placeCount: number,
+}
+
+
+function MainScreen ({placeCount}: MainScreenProps): JSX.Element {
   return (
     <body>
       <div style={{
@@ -81,7 +86,7 @@ function MainScreen (): JSX.Element {
             <div className="cities__places-container container">
               <section className="cities__places places">
                 <h2 className="visually-hidden">Places</h2>
-                <b className="places__found">312 places to stay in Amsterdam</b>
+                <b className="places__found">{placeCount} places to stay in Amsterdam</b>
                 <form className="places__sorting" action="#" method="get">
                   <span className="places__sorting-caption">Sort by</span>
                   <span className="places__sorting-type" tabIndex={0}>
@@ -98,7 +103,11 @@ function MainScreen (): JSX.Element {
                   </ul>
                 </form>
                 <div className="cities__places-list places__list tabs__content">
-                  <placeCard/>
+                  <PlaceCard />
+                  <PlaceCard />
+                  <PlaceCard />
+                  <PlaceCard />
+                  <PlaceCard />
                 </div>
               </section>
               <div className="cities__right-section">
@@ -112,4 +121,4 @@ function MainScreen (): JSX.Element {
   );
 }
 
-export default mainScreen;
+export default MainScreen;
