@@ -21,7 +21,7 @@ function NotFoundScreen (): JSX.Element {
         textAlign: 'center',
       }}
       >
-        please <Link to='/'>click</Link> here to go to the main page
+        <Link to='/'>please click here to go to the main page</Link>
       </h2>
     </body>
   );
