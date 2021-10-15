@@ -1,5 +1,6 @@
 import PlaceCard from '../place-card/place-card';
 import Logo from '../logo/logo';
+import PlaceCardList from '../place-card-list/place-card-list';
 
 type MainScreenProps = {
   placeCount: number,
@@ -99,13 +100,7 @@ function MainScreen ({placeCount}: MainScreenProps): JSX.Element {
                     <li className="places__option" tabIndex={0}>Top rated first</li>
                   </ul>
                 </form>
-                <div className="cities__places-list places__list tabs__content">
-                  <PlaceCard />
-                  <PlaceCard />
-                  <PlaceCard />
-                  <PlaceCard />
-                  <PlaceCard />
-                </div>
+                <PlaceCardList />
               </section>
               <div className="cities__right-section">
                 <section className="cities__map map"></section>
