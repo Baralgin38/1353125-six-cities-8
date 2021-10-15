@@ -16,7 +16,7 @@ type City = {
   name: string;
 }
 
-type Offer = {
+export type Offer = {
   type: string;
   title: string;
   rating: number;

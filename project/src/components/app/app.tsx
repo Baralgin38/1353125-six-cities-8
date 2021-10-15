@@ -3,13 +3,16 @@ import {AppRoute, AuthorizationStatus} from '../../const';
 import MainScreen from '../main-screen/main-screen';
 import FavoritesScreen from '../favorites-screen/favorites-screen';
 import RoomScreen from '../room-screen/room-screen';
-// import RoomNotLoggedScreen from '../room-not-logged-screen/room-not-logged-screen';
 import SignInScreen from '../sign-in-screen/sign-in-screen';
 import NotFoundScreen from '../not-found-screen/not-found-screen';
 import PrivateRoute from '../private-route/private-route';
+import {Offer} from '../../types/offer';
+import {Comment} from '../../types/comment';
 
 type AppProps = {
-  placeCount: number,
+  placeCount: number;
+  offers: Offer[];
+  comments: Comment[];
 }
 
 function App({placeCount}: AppProps): JSX.Element {
