@@ -22,6 +22,7 @@ export const offers: Offers = [
     ],
     isFavorite: true,
     isPremium: false,
+    isActive: false,
     city: {
       location: {
         latitude: 52.36,
@@ -61,6 +62,7 @@ export const offers: Offers = [
     ],
     isFavorite: false,
     isPremium: false,
+    isActive: false,
     city: {
       location: {
         latitude: 14.25,
@@ -101,6 +103,7 @@ export const offers: Offers = [
     ],
     isFavorite: true,
     isPremium: true,
+    isActive: false,
     city: {
       location: {
         latitude: 87.69,
@@ -140,6 +143,7 @@ export const offers: Offers = [
     ],
     isFavorite: false,
     isPremium: false,
+    isActive: true,
     city: {
       location: {
         latitude: 77.55,

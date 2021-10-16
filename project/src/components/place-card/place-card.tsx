@@ -2,9 +2,10 @@ import {Offer} from '../../types/offer';
 
 type PlaceCardProops = {
   offer: Offer;
-}
+  };
 
-function PlaceCard ({offer}: Offer): JSX.Element {
+
+function PlaceCard ({offer}: PlaceCardProops): JSX.Element {
   return (
     <article className="cities__place-card place-card">
       <div className="cities__image-wrapper place-card__image-wrapper">

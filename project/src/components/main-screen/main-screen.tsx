@@ -1,4 +1,3 @@
-import PlaceCard from '../place-card/place-card';
 import Logo from '../logo/logo';
 import PlaceCardList from '../place-card-list/place-card-list';
 

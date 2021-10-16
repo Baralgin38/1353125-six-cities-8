@@ -30,6 +30,7 @@ export type Offer = {
   images: string[];
   isFavorite: boolean;
   isPremium: boolean;
+  isActive: boolean;
   city: City;
   location: Location;
   host: Host;
