@@ -15,12 +15,12 @@ type AppProps = {
   comments: Comment[];
 }
 
-function App({placeCount}: AppProps): JSX.Element {
+function App({placeCount, offers, comments}: AppProps): JSX.Element {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path={AppRoute.Main}>
-          <MainScreen placeCount = {placeCount}/>
+          <MainScreen placeCount = {placeCount} offers={offers}/>
         </Route>
         <PrivateRoute
           exact
