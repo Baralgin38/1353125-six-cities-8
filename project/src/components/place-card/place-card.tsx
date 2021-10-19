@@ -1,4 +1,6 @@
 import {Offer} from '../../types/offer';
+import {Link} from 'react-router-dom';
+import {AppRoute} from '../../const';
 
 type PlaceCardProops = {
   offer: Offer;
@@ -38,7 +40,7 @@ function PlaceCard ({offer}: PlaceCardProops): JSX.Element {
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="/">{title}</a>
+          <Link to={AppRoute.Room}>{title}</Link>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>
