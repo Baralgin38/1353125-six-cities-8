@@ -1,5 +1,7 @@
 import Logo from '../logo/logo';
 import ReviewsForm from '../reviews-form/reviews-form';
+import {Link} from 'react-router-dom';
+import {AppRoute} from '../../const';
 
 function RoomScreen(): JSX.Element {
   return (
@@ -19,16 +21,16 @@ function RoomScreen(): JSX.Element {
               <nav className="header__nav">
                 <ul className="header__nav-list">
                   <li className="header__nav-item user">
-                    <a className="header__nav-link header__nav-link--profile" href="/">
+                    <Link className="header__nav-link header__nav-link--profile" to={AppRoute.Favorites}>
                       <div className="header__avatar-wrapper user__avatar-wrapper">
                       </div>
                       <span className="header__user-name user__name">Oliver.conner@gmail.com</span>
-                    </a>
+                    </Link>
                   </li>
                   <li className="header__nav-item">
-                    <a className="header__nav-link" href="/">
+                    <Link className="header__nav-link" to="/">
                       <span className="header__signout">Sign out</span>
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </nav>

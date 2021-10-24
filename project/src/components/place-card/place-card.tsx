@@ -1,6 +1,5 @@
 import {Offer} from '../../types/offer';
 import {Link} from 'react-router-dom';
-import {AppRoute} from '../../const';
 
 type PlaceCardProops = {
   offer: Offer;
@@ -8,7 +7,7 @@ type PlaceCardProops = {
 
 
 function PlaceCard ({offer}: PlaceCardProops): JSX.Element {
-  const {price, type, title} = offer;
+  const {price, type, title, id} = offer;
   return (
     <article className="cities__place-card place-card">
       <div className="cities__image-wrapper place-card__image-wrapper">
@@ -40,7 +39,7 @@ function PlaceCard ({offer}: PlaceCardProops): JSX.Element {
           </div>
         </div>
         <h2 className="place-card__name">
-          <Link to={AppRoute.Room}>{title}</Link>
+          <Link to={`/offer/${id}`}>{title}</Link>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>
