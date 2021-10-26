@@ -1,12 +1,16 @@
-import PlaceCard from '../place-card/place-card';
 import Logo from '../logo/logo';
+import {Link} from 'react-router-dom';
+import PlaceCardList from '../place-card-list/place-card-list';
+import {Offers} from '../../types/offer';
+import {AppRoute} from '../../const';
 
 type MainScreenProps = {
-  placeCount: number,
+  placeCount: number;
+  offers: Offers;
 }
 
 
-function MainScreen ({placeCount}: MainScreenProps): JSX.Element {
+function MainScreen ({placeCount, offers}: MainScreenProps): JSX.Element {
   return (
     <body>
       <div style={{
@@ -24,16 +28,16 @@ function MainScreen ({placeCount}: MainScreenProps): JSX.Element {
               <nav className="header__nav">
                 <ul className="header__nav-list">
                   <li className="header__nav-item user">
-                    <a className="header__nav-link header__nav-link--profile" href="/">
+                    <Link className="header__nav-link header__nav-link--profile" to={AppRoute.Favorites}>
                       <div className="header__avatar-wrapper user__avatar-wrapper">
                       </div>
                       <span className="header__user-name user__name">Oliver.conner@gmail.com</span>
-                    </a>
+                    </Link>
                   </li>
                   <li className="header__nav-item">
-                    <a className="header__nav-link" href="/">
+                    <Link className="header__nav-link" to={AppRoute.Main}>
                       <span className="header__signout">Sign out</span>
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </nav>
@@ -47,34 +51,34 @@ function MainScreen ({placeCount}: MainScreenProps): JSX.Element {
             <section className="locations container">
               <ul className="locations__list tabs__list">
                 <li className="locations__item">
-                  <a className="locations__item-link tabs__item" href="/">
+                  <Link className="locations__item-link tabs__item" to={AppRoute.Main}>
                     <span>Paris</span>
-                  </a>
+                  </Link>
                 </li>
                 <li className="locations__item">
-                  <a className="locations__item-link tabs__item" href="/">
+                  <Link className="locations__item-link tabs__item" to={AppRoute.Main}>
                     <span>Cologne</span>
-                  </a>
+                  </Link>
                 </li>
                 <li className="locations__item">
-                  <a className="locations__item-link tabs__item" href="/">
+                  <Link className="locations__item-link tabs__item" to={AppRoute.Main}>
                     <span>Brussels</span>
-                  </a>
+                  </Link>
                 </li>
                 <li className="locations__item">
-                  <a className="locations__item-link tabs__item tabs__item--active" href="/">
+                  <Link className="locations__item-link tabs__item tabs__item--active" to={AppRoute.Main}>
                     <span>Amsterdam</span>
-                  </a>
+                  </Link>
                 </li>
                 <li className="locations__item">
-                  <a className="locations__item-link tabs__item" href="/">
+                  <Link className="locations__item-link tabs__item" to={AppRoute.Main}>
                     <span>Hamburg</span>
-                  </a>
+                  </Link>
                 </li>
                 <li className="locations__item">
-                  <a className="locations__item-link tabs__item" href="/">
+                  <Link className="locations__item-link tabs__item" to={AppRoute.Main}>
                     <span>Dusseldorf</span>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </section>
@@ -99,13 +103,7 @@ function MainScreen ({placeCount}: MainScreenProps): JSX.Element {
                     <li className="places__option" tabIndex={0}>Top rated first</li>
                   </ul>
                 </form>
-                <div className="cities__places-list places__list tabs__content">
-                  <PlaceCard />
-                  <PlaceCard />
-                  <PlaceCard />
-                  <PlaceCard />
-                  <PlaceCard />
-                </div>
+                <PlaceCardList offers={offers}/>
               </section>
               <div className="cities__right-section">
                 <section className="cities__map map"></section>

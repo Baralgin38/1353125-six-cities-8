@@ -1,4 +1,13 @@
-function PlaceCard (): JSX.Element {
+import {Offer} from '../../types/offer';
+import {Link} from 'react-router-dom';
+
+type PlaceCardProops = {
+  offer: Offer;
+  };
+
+
+function PlaceCard ({offer}: PlaceCardProops): JSX.Element {
+  const {price, type, title, id} = offer;
   return (
     <article className="cities__place-card place-card">
       <div className="cities__image-wrapper place-card__image-wrapper">
@@ -9,7 +18,7 @@ function PlaceCard (): JSX.Element {
       <div className="place-card__info">
         <div className="place-card__price-wrapper">
           <div className="place-card__price">
-            <b className="place-card__price-value">&euro;80</b>
+            <b className="place-card__price-value">&euro;{price}</b>
             <span className="place-card__price-text">&#47;&nbsp;night</span>
           </div>
           <button className="place-card__bookmark-button place-card__bookmark-button--active button" type="button">
@@ -30,9 +39,9 @@ function PlaceCard (): JSX.Element {
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="/">Wood and stone place</a>
+          <Link to={`/offer/${id}`}>{title}</Link>
         </h2>
-        <p className="place-card__type">Private room</p>
+        <p className="place-card__type">{type}</p>
       </div>
     </article>
   );
