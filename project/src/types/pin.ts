@@ -1,5 +1,5 @@
 export type Pin = {
   Path: string;
-  Size: number[];
-  Anchor: number[];
+  Size: [number, number];
+  Anchor: [number, number];
 }

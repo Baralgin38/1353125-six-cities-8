@@ -24,3 +24,7 @@ export const PinIconActive: Pin = {
   Size: [28, 40],
   Anchor: [14, 40],
 };
+
+export const LINK_TO_MAP = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
+
+export const ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>';

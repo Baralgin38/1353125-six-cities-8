@@ -1,16 +1,18 @@
 import Logo from '../logo/logo';
 import {Link} from 'react-router-dom';
 import PlaceCardList from '../place-card-list/place-card-list';
-import {Offers} from '../../types/offer';
+import {City, Offers} from '../../types/offer';
 import {AppRoute} from '../../const';
+import Map from '../map/map';
 
 type MainScreenProps = {
   placeCount: number;
   offers: Offers;
+  city: City;
 }
 
 
-function MainScreen ({placeCount, offers}: MainScreenProps): JSX.Element {
+function MainScreen ({placeCount, offers, city}: MainScreenProps): JSX.Element {
   return (
     <body>
       <div style={{
@@ -106,7 +108,7 @@ function MainScreen ({placeCount, offers}: MainScreenProps): JSX.Element {
                 <PlaceCardList offers={offers}/>
               </section>
               <div className="cities__right-section">
-                <section className="cities__map map"></section>
+                <Map city={city} offers={offers}/>
               </div>
             </div>
           </div>
