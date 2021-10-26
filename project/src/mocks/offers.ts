@@ -1,4 +1,5 @@
 import {Offers} from '../types/offer';
+import {city} from './city';
 
 const AVATAR_URL = 'https://i.pravatar.cc/128';
 const PREVIEW_IMGAGE = 'http://picsum.photos/248/152';
@@ -23,17 +24,10 @@ export const offers: Offers = [
     isFavorite: true,
     isPremium: false,
     isActive: false,
-    city: {
-      location: {
-        latitude: 52.36,
-        longitude: 54.87,
-        zoom: 10,
-      },
-      name: 'Amsterdam',
-    },
+    city,
     location: {
-      latitude: 23.14,
-      longitude: 21.25,
+      latitude: 52.390,
+      longitude: 4.853,
       zoom: 8,
     },
     host: {
@@ -53,7 +47,7 @@ export const offers: Offers = [
     maxGuests: 2,
     bedrooms: 1,
     goods: ['Wifi', 'Cable TV', 'Dishwasher', 'Coffee machine'],
-    description: 'Great apartment for a couple, located in the historic center of Brussels.',
+    description: 'Great apartment for a couple, located in the historic center of Amsterdam.',
     id: 12,
     images: [
       `${PREVIEW_IMGAGE}?rnd=${Math.random()}`,
@@ -63,17 +57,10 @@ export const offers: Offers = [
     isFavorite: false,
     isPremium: false,
     isActive: false,
-    city: {
-      location: {
-        latitude: 14.25,
-        longitude: 10.47,
-        zoom: 10,
-      },
-      name: 'Brussels',
-    },
+    city,
     location: {
-      latitude: 41.21,
-      longitude: 11.25,
+      latitude: 52.369,
+      longitude: 4.853,
       zoom: 8,
     },
     host: {
@@ -104,17 +91,10 @@ export const offers: Offers = [
     isFavorite: true,
     isPremium: true,
     isActive: false,
-    city: {
-      location: {
-        latitude: 87.69,
-        longitude: 78.45,
-        zoom: 10,
-      },
-      name: 'Hamburg',
-    },
+    city,
     location: {
-      latitude: 55.87,
-      longitude: 41.28,
+      latitude: 52.390,
+      longitude: 4.929,
       zoom: 8,
     },
     host: {
@@ -127,7 +107,7 @@ export const offers: Offers = [
 
   {
     type: 'hotel',
-    title: 'A good hotel to relax after walking around Paris.',
+    title: 'A good hotel to relax after walking around Amsterdam.',
     rating: 3,
     price: 240,
     previewImage: `${PREVIEW_IMGAGE}?rnd=${Math.random()}`,
@@ -144,17 +124,10 @@ export const offers: Offers = [
     isFavorite: false,
     isPremium: false,
     isActive: true,
-    city: {
-      location: {
-        latitude: 77.55,
-        longitude: 40.25,
-        zoom: 10,
-      },
-      name: 'Paris',
-    },
+    city,
     location: {
-      latitude: 99.87,
-      longitude: 78.28,
+      latitude: 52.380,
+      longitude: 4.939,
       zoom: 8,
     },
     host: {

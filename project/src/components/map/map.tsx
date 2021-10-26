@@ -1,0 +1,52 @@
+import {Icon, Marker} from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+import {useRef, useEffect} from 'react';
+import useMap from '../../hooks/useMap';
+import {PinIcon} from '../../const';
+import {City, Offers} from '../../types/offer';
+// import {PinIcon, PinIconActive} from '../../const';
+// import {City, Offer, Offers} from '../../types/offer';
+
+type MapProps = {
+  city: City,
+  offers: Offers,
+}
+
+const pin = new Icon({
+  iconUrl: PinIcon.Path,
+  iconSize: PinIcon.Size,
+  iconAnchor: PinIcon.Anchor,
+});
+
+// const pinActive = new Icon ({
+//   iconUrl: PinIconActive.Path,
+//   iconSize: PinIconActive.Size,
+//   iconAnchor: PinIconActive.Anchor,
+// });
+
+function Map (props: MapProps): JSX.Element {
+  const {city, offers} = props;
+
+  const mapRef = useRef(null);
+  const map = useMap(mapRef, city);
+
+  useEffect(() => {
+    if (map) {
+      offers.forEach((offer) => {
+        const marker = new Marker({
+          lat: offer.location.latitude,
+          lng: offer.location.longitude,
+        });
+
+        marker.setIcon(pin).addTo(map);
+      });
+
+    }
+  }, [map, offers]);
+
+  return (
+    <section className="cities__map map" ref={mapRef}></section>
+  );
+}
+
+export default Map;
