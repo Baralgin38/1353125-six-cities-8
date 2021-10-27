@@ -4,8 +4,7 @@ import {useRef, useEffect} from 'react';
 import useMap from '../../hooks/useMap';
 import {PinIcon} from '../../const';
 import {City, Offers} from '../../types/offer';
-// import {PinIcon, PinIconActive} from '../../const';
-// import {City, Offer, Offers} from '../../types/offer';
+
 
 type MapProps = {
   city: City,
@@ -17,12 +16,6 @@ const pin = new Icon({
   iconSize: PinIcon.Size,
   iconAnchor: PinIcon.Anchor,
 });
-
-// const pinActive = new Icon ({
-//   iconUrl: PinIconActive.Path,
-//   iconSize: PinIconActive.Size,
-//   iconAnchor: PinIconActive.Anchor,
-// });
 
 function Map (props: MapProps): JSX.Element {
   const {city, offers} = props;
