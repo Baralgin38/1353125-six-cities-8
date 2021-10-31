@@ -6,17 +6,17 @@ import RoomScreen from '../room-screen/room-screen';
 import SignInScreen from '../sign-in-screen/sign-in-screen';
 import NotFoundScreen from '../not-found-screen/not-found-screen';
 import PrivateRoute from '../private-route/private-route';
-import {Offer, City} from '../../types/offer';
-import {Comment} from '../../types/comment';
+import {Offers, City} from '../../types/offer';
+import {Reviews} from '../../types/review';
 
 type AppProps = {
   placeCount: number;
-  offers: Offer[];
-  comments: Comment[];
+  offers: Offers;
+  reviews: Reviews;
   city: City;
 }
 
-function App({placeCount, offers, comments, city}: AppProps): JSX.Element {
+function App({placeCount, offers, reviews, city}: AppProps): JSX.Element {
   return (
     <BrowserRouter>
       <Switch>
@@ -31,7 +31,7 @@ function App({placeCount, offers, comments, city}: AppProps): JSX.Element {
         >
         </PrivateRoute>
         <Route exact path={AppRoute.Room}>
-          <RoomScreen/>
+          <RoomScreen reviews={reviews}/>
         </Route>
         <Route exact path={AppRoute.SignIn}>
           <SignInScreen/>
