@@ -108,7 +108,9 @@ function MainScreen ({placeCount, offers, city}: MainScreenProps): JSX.Element {
                 <PlaceCardList offers={offers}/>
               </section>
               <div className="cities__right-section">
-                <Map city={city} offers={offers}/>
+                <section className="cities__map map">
+                  <Map city={city} offers={offers}/>
+                </section>
               </div>
             </div>
           </div>

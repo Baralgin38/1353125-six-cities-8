@@ -1,11 +1,11 @@
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import {AppRoute, AuthorizationStatus} from '../../const';
 import MainScreen from '../main-screen/main-screen';
 import FavoritesScreen from '../favorites-screen/favorites-screen';
 import RoomScreen from '../room-screen/room-screen';
 import SignInScreen from '../sign-in-screen/sign-in-screen';
 import NotFoundScreen from '../not-found-screen/not-found-screen';
 import PrivateRoute from '../private-route/private-route';
+import {AppRoute, AuthorizationStatus} from '../../const';
 import {Offers, City} from '../../types/offer';
 import {Reviews} from '../../types/review';
 
@@ -31,7 +31,7 @@ function App({placeCount, offers, reviews, city}: AppProps): JSX.Element {
         >
         </PrivateRoute>
         <Route exact path={AppRoute.Room}>
-          <RoomScreen reviews={reviews}/>
+          <RoomScreen reviews={reviews} city={city} offers={offers}/>
         </Route>
         <Route exact path={AppRoute.SignIn}>
           <SignInScreen/>

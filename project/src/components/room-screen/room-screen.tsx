@@ -1,15 +1,19 @@
 import Logo from '../logo/logo';
 import ReviewsForm from '../reviews-form/reviews-form';
 import ReviewsList from '../reviews-list/reviews-list';
+import Map from '../map/map';
 import {Link} from 'react-router-dom';
 import {AppRoute} from '../../const';
 import {Reviews} from '../../types/review';
+import {Offers, City} from '../../types/offer';
 
 type RoomScreenProps = {
   reviews: Reviews;
+  offers: Offers;
+  city: City;
 }
 
-function RoomScreen({reviews}: RoomScreenProps): JSX.Element {
+function RoomScreen({reviews, offers, city}: RoomScreenProps): JSX.Element {
   return (
     <body>
       <div style={{
@@ -174,7 +178,9 @@ function RoomScreen({reviews}: RoomScreenProps): JSX.Element {
                 </section>
               </div>
             </div>
-            <section className="property__map map"></section>
+            <section className="property__map map">
+              <Map city={city} offers={offers.slice(1)}/>
+            </section>
           </section>
           <div className="container">
             <section className="near-places places">

@@ -7,7 +7,6 @@ function useMap (
   mapRef: MutableRefObject<HTMLElement | null>,
   city: City,
 ): Map | null {
-  const {location} = city;
 
   const [map, setMap] = useState<Map | null>(null);
 
@@ -15,10 +14,10 @@ function useMap (
     if (mapRef.current !== null && map === null) {
       const instance = new Map(mapRef.current, {
         center: {
-          lat: location.latitude,
-          lng: location.longitude,
+          lat: city.location.latitude,
+          lng: city.location.longitude,
         },
-        zoom: location.zoom,
+        zoom: city.location.zoom,
       });
 
       const layer = new TileLayer (

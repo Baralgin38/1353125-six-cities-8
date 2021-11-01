@@ -12,10 +12,11 @@ function PlaceCardList ({offers}: PlaceCardListProops): JSX.Element {
 
   return (
     <div className="cities__places-list places__list tabs__content">
-      <PlaceCard offer={offers[0]}/>
-      <PlaceCard offer={offers[1]}/>
-      <PlaceCard offer={offers[2]}/>
-      <PlaceCard offer={offers[3]}/>
+      {
+        offers.map((offer) => (
+          <PlaceCard key={`${offer.id}`} offer={offer}/>
+        ))
+      }
     </div>
   );
 }
