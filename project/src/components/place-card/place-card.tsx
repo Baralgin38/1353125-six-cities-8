@@ -3,14 +3,15 @@ import {Link} from 'react-router-dom';
 
 type PlaceCardProops = {
   offer: Offer;
+  nearPlaces?: boolean;
   };
 
 
-function PlaceCard ({offer}: PlaceCardProops): JSX.Element {
+function PlaceCard ({offer, nearPlaces}: PlaceCardProops): JSX.Element {
   const {price, type, title, id, previewImage} = offer;
   return (
-    <article className="cities__place-card place-card">
-      <div className="cities__image-wrapper place-card__image-wrapper">
+    <article className= {`${nearPlaces ? 'near-places__card' : 'cities__place-card'} place-card`}>
+      <div className={`${nearPlaces ? 'near-places__image-wrapper' : 'cities__image-wrapper'} place-card__image-wrapper`}>
         <a href="/">
           <img className="place-card__image" src={previewImage} width="260" height="200" alt="Place" />
         </a>
