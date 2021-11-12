@@ -7,25 +7,6 @@ type ReviewsItemProps = {
 function ReviewsItem ({review}: ReviewsItemProps): JSX.Element {
   const {comment, user, date, rating} = review;
 
-  const getStarsCount = (reviewRating: number) => {
-    switch(rating) {
-      case 1:
-        return '20%';
-      case 2:
-        return '40%';
-      case 3:
-        return '60%';
-      case 4:
-        return '80%';
-      case 5:
-        return '100%';
-      default:
-        return '0%';
-    }
-  };
-
-  const starsCount = getStarsCount(rating);
-
   return (
     <li className="reviews__item">
       <div className="reviews__user user">
@@ -40,7 +21,7 @@ function ReviewsItem ({review}: ReviewsItemProps): JSX.Element {
         <div className="reviews__rating rating">
           <div className="reviews__stars rating__stars">
             <span style={{
-              width: starsCount,
+              width: `${Math.floor(rating) / 5 * 100  }%`,
             }}
             >
             </span>
