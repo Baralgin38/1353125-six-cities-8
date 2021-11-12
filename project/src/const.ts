@@ -14,13 +14,13 @@ export enum AuthorizationStatus {
 }
 
 export const PinIcon: Pin = {
-  Path: 'project/public/img/pin.svg',
+  Path: 'img/pin.svg',
   Size: [28, 40],
   Anchor: [14, 40],
 };
 
 export const PinIconActive: Pin = {
-  Path: 'project/public/img/pin-active.svg',
+  Path: 'img/pin-active.svg',
   Size: [28, 40],
   Anchor: [14, 40],
 };
