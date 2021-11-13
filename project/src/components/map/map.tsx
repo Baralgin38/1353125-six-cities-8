@@ -38,7 +38,11 @@ function Map (props: MapProps): JSX.Element {
   }, [map, offers]);
 
   return (
-    <section className="cities__map map" ref={mapRef}></section>
+    <div style={{
+      height: '100%',
+    }} ref={mapRef}
+    >
+    </div>
   );
 }
 

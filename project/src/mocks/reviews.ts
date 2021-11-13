@@ -1,8 +1,8 @@
-import {Comments} from '../types/comment';
+import {Reviews} from '../types/review';
 
 const AVATAR_URL = 'https://i.pravatar.cc/128';
 
-export const comments: Comments = [
+export const reviews: Reviews = [
   {
     comment: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
     date: '2020-05-08T14:13:56.569Z',
